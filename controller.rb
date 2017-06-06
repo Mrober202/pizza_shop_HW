@@ -10,9 +10,9 @@ get '/pizza' do
   erb(:index)
 end
 
-get '/pizza/new' do 
+get '/customer' do 
   @customers = Customer.all()
-  erb(:new)
+  erb(:customer_index)
 end
 
 get '/pizza/:id' do
@@ -20,7 +20,7 @@ get '/pizza/:id' do
   erb(:show)
 end
 
-post '/pizzas' do
+post '/pizza.new' do
   @pizza = PizzaOrder.new(params)
   @pizza.save()
   erb(:create)
